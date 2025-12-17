@@ -20,9 +20,12 @@ function ProductCard({
   specs: string[];
 }) {
   const primary = useImageFallback([primaryImage, primaryImage.replace(/\.jpg$/i, ".jpeg"), placeholder]);
-  const secondary = secondaryImage
-    ? useImageFallback([secondaryImage, secondaryImage.replace(/\.jpg$/i, ".jpeg"), secondaryPlaceholder || placeholder])
-    : null;
+  const secondaryCandidates = [
+    secondaryImage,
+    secondaryImage?.replace(/\.jpg$/i, ".jpeg"),
+    secondaryPlaceholder || placeholder,
+  ];
+  const secondary = useImageFallback(secondaryCandidates.filter(Boolean) as string[]);
   return (
     <div className="rounded-xl border bg-white p-4 md:p-6 shadow-sm">
       <img
@@ -31,7 +34,7 @@ function ProductCard({
         onError={primary.onError}
         className="w-full h-60 object-contain mb-4 select-none"
       />
-      {secondary && (
+      {secondaryImage && (
         <img
           src={secondary.src}
           alt={`${title} schematic`}

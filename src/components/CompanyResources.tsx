@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function CompanyResources() {
   return (
     <section className="bg-sky-50 border-t">
@@ -6,15 +8,15 @@ export function CompanyResources() {
           <div>
             <h3 className="font-semibold mb-3">Company</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#about" className="hover:underline">About AVC</a></li>
-              <li><a href="/#products" className="hover:underline">Products</a></li>
+              <li><Link href="/#about" className="hover:underline">About AVC</Link></li>
+              <li><Link href="/#products" className="hover:underline">Products</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-3">Products</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#products" className="hover:underline">NB‑IoT Ultrasonic Meter</a></li>
-              <li><a href="/#products" className="hover:underline">LoRaWAN Ultrasonic Meter</a></li>
+              <li><Link href="/#products" className="hover:underline">NB‑IoT Ultrasonic Meter</Link></li>
+              <li><Link href="/#products" className="hover:underline">LoRaWAN Ultrasonic Meter</Link></li>
             </ul>
           </div>
           <div>
@@ -33,7 +35,7 @@ export function CompanyResources() {
               <li>Email: support@avcelectronics.com</li>
               <li>Phone: +1 (714) 555‑0101</li>
               <li>Hours: Mon–Fri 9:00–17:00 (PT)</li>
-              <li><a className="hover:underline" href="/contact">Contact form</a></li>
+              <li><Link className="hover:underline" href="/contact">Contact form</Link></li>
             </ul>
           </div>
           <div>
